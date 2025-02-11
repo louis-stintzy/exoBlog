@@ -9,10 +9,10 @@ async function syncModels() {
     await sequelize.authenticate();
     console.log("Database connected successfully.");
 
-    await User.sync({ force: true });
+    await User.sync({ force: false });
     console.log("User model synchronized.");
 
-    await Post.sync({ force: true });
+    await Post.sync({ force: false });
     console.log("Post model synchronized.");
 
     console.log("All models were synchronized successfully.");

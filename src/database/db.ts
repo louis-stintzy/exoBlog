@@ -8,6 +8,7 @@ function connect() {
     logging: console.log,
     define: {
       underscored: true,
+      timestamps: true,
       createdAt: "created_at",
       updatedAt: "updated_at",
     },

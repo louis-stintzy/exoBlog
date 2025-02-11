@@ -23,6 +23,15 @@ const Post = sequelize.define(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      reference: {
+        model: "User",
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+    },
   },
   {
     tableName: "post",
