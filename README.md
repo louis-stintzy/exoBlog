@@ -1,1 +1,3 @@
 # exoBlog
+
+## Routes
