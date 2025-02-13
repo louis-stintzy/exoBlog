@@ -4,7 +4,7 @@ export interface NewUserData {
   username: string;
   email: string;
   password: string;
-  avatar: string;
+  avatar: string | null;
 }
 
 export interface UserData {
@@ -12,7 +12,7 @@ export interface UserData {
   username: string;
   email: string;
   password: string;
-  avatar: string;
+  avatar: string | null;
   createdAt: Date;
   updatedAt: Date;
 }

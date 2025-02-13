@@ -1,4 +1,4 @@
-import connect from './db';
+import connect from './db_connect';
 
 import { User, Post } from '../models';
 
@@ -9,7 +9,7 @@ async function syncModels() {
     await sequelize.authenticate();
     console.log('Database connected successfully.');
 
-    await User.sync({ force: false });
+    await User.sync({ force: false }); // note that force: true will drop the table if it already exists
     console.log('User model synchronized.');
 
     await Post.sync({ force: false });
