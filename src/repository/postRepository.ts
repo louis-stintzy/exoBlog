@@ -1,5 +1,5 @@
-import { NewPostData, PostIdData } from "../@types/post";
-import { Post } from "../models";
+import { NewPostData, PostIdData } from '../@types/post';
+import { Post } from '../models';
 
 export async function findAll() {
   return await Post.findAll();

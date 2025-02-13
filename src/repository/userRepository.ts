@@ -1,5 +1,5 @@
-import { NewUserData, UserIdData } from "../@types/user";
-import { User } from "../models";
+import { NewUserData, UserIdData } from '../@types/user';
+import { User } from '../models';
 
 export async function findAll() {
   return await User.findAll();

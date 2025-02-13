@@ -1,5 +1,5 @@
-import { NewUserData, UserIdData } from "../@types/user";
-import * as userRepository from "../repository/userRepository";
+import { NewUserData, UserIdData } from '../@types/user';
+import * as userRepository from '../repository/userRepository';
 
 export async function getAllUsers() {
   return await userRepository.findAll();
@@ -16,7 +16,7 @@ export async function createUser(data: NewUserData) {
 export async function updateUser(id: UserIdData, data: NewUserData) {
   const user = await userRepository.findById(id);
   if (!user) {
-    throw new Error("User not found");
+    throw new Error('User not found');
   }
   return await userRepository.update(id, data);
 }
@@ -24,7 +24,7 @@ export async function updateUser(id: UserIdData, data: NewUserData) {
 export async function deleteUser(id: UserIdData) {
   const user = await userRepository.findById(id);
   if (!user) {
-    throw new Error("User not found");
+    throw new Error('User not found');
   }
   return await userRepository.remove(id);
 }

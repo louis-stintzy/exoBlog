@@ -1,3 +1,3 @@
-import { User, Post } from "./associations";
+import { User, Post } from './associations';
 
 export { User, Post };
