@@ -1,24 +1,25 @@
-import connect from "./db";
+import connect from './db';
 
-import { User, Post } from "../models";
+import { User, Post } from '../models';
 
 const sequelize = connect();
 
 async function syncModels() {
   try {
     await sequelize.authenticate();
-    console.log("Database connected successfully.");
+    console.log('Database connected successfully.');
 
     await User.sync({ force: false });
-    console.log("User model synchronized.");
+    console.log('User model synchronized.');
 
     await Post.sync({ force: false });
-    console.log("Post model synchronized.");
+    console.log('Post model synchronized.');
 
-    console.log("All models were synchronized successfully.");
+    console.log('All models were synchronized successfully.');
   } catch (error) {
-    console.error("Error synchronizing models:", error);
+    console.error('Error synchronizing models:', error);
   }
 }
 
-syncModels();
+// void car syncModels ne retourne rien et les erreurs sont gérées dans le bloc try/catch
+void syncModels();

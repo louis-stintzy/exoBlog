@@ -1,10 +1,10 @@
-const { DataTypes } = require("sequelize");
-import connect from "../database/db";
+import { DataTypes } from 'sequelize';
+import connect from '../database/db';
 
 const sequelize = connect();
 
 const User = sequelize.define(
-  "User",
+  'User',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -30,7 +30,7 @@ const User = sequelize.define(
     },
   },
   {
-    tableName: "app_user",
+    tableName: 'app_user',
     timestamps: true,
   }
 );

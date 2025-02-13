@@ -1,10 +1,10 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import router from "./routes";
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import router from './routes';
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ?? 3000;
 app.use(
   // à configurer + ajouter middleware pour personnalisé ( if (req.headers !== process.env.CORS_ORIGIN) {)...)
   cors({
@@ -19,16 +19,16 @@ app.use(express.json());
 // Permettre l'utilisation de la methode POST
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to the Blog Backend !");
+app.get('/', (req: Request, res: Response) => {
+  res.send('Welcome to the Blog Backend !');
 });
 
 // Routes '/api', router
-app.use("/api", router);
+app.use('/api', router);
 
 // Gestion des erreurs 404
 app.use((req: Request, res: Response) => {
-  res.status(404).send("Not Found");
+  res.status(404).send('Not Found');
 });
 
 app.listen(port, () => {

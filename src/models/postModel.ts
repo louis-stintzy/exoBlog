@@ -1,10 +1,10 @@
-const { DataTypes } = require("sequelize");
-import connect from "../database/db";
+import { DataTypes } from 'sequelize';
+import connect from '../database/db';
 
 const sequelize = connect();
 
 const Post = sequelize.define(
-  "Post",
+  'Post',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -26,15 +26,15 @@ const Post = sequelize.define(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      reference: {
-        model: "User",
-        key: "id",
+      references: {
+        model: 'User',
+        key: 'id',
       },
-      onUpdate: "CASCADE",
+      onUpdate: 'CASCADE',
     },
   },
   {
-    tableName: "post",
+    tableName: 'post',
     timestamps: true,
   }
 );

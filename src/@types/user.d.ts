@@ -1,13 +1,13 @@
 export type UserIdData = number;
 
-export type NewUserData = {
+export interface NewUserData {
   username: string;
   email: string;
   password: string;
   avatar: string;
-};
+}
 
-export type UserData = {
+export interface UserData {
   id: UserIdData;
   username: string;
   email: string;
@@ -15,4 +15,4 @@ export type UserData = {
   avatar: string;
   createdAt: Date;
   updatedAt: Date;
-};
+}

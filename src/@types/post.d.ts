@@ -1,17 +1,17 @@
 export type PostIdData = number;
 
 // todo : rajouter category
-export type NewPostData = {
+export interface NewPostData {
   title: string;
   content: string;
   image: string;
-};
+}
 
-export type PostData = {
+export interface PostData {
   id: PostIdData;
   title: string;
   content: string;
   image: string;
   createdAt: Date;
   updatedAt: Date;
-};
+}
